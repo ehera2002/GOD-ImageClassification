@@ -15,13 +15,24 @@ Google Open Data를 활용한 이미지 분류 모델
 
 ### 데이터 출처
 - 출처: [Google Open Image Dataset V6](https://storage.googleapis.com/openimages/web/index.html)
-- 데이터 사이즈: train - 513GB, vaild - 12GB, test - 36GB
 - [awscli](https://aws.amazon.com/ko/cli/)를 이용한 다운로드 가능
 ```bash
 aws s3 --no-sign-request sync s3://open-images-dataset/validation [target_dir/validation]
 ```
 
 ### 데이터 설명
-- Image IDs<br>
+- Image<br>
+  이미지 데이터: train - 513GB, vaild - 12GB, test - 36GB
+- ImageIDs<br>
   AuthorProfileURL, Author, Title, OriginalSize, OriginalMD5, Thumbnail300KURL, Rotation 등 정보 포함
-- 
+- metadata<br>
+  LabelName, DislayName 등 클래스명, 약 2만개의 클래스 보유
+- Mlabel(머신), Hlabel(사람)<br>
+  Source, LabelName, Confidence 등 라벨링 정보
+
+### 데이터 처리 작업
+- 데이터 로드: sframe reading
+- 테이블 병합: concatenation
+- 데이터 사전 구축: LabelName과 DisplayName 연결
+- ImageID를 활용한 라벨링
+- sframe 데이터셋 구축, 모델 러닝, 테스트 및 평가, 로그 기
