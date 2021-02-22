@@ -35,4 +35,6 @@ aws s3 --no-sign-request sync s3://open-images-dataset/validation [target_dir/va
 - 테이블 병합: concatenation
 - 데이터 사전 구축: LabelName과 DisplayName 연결
 - ImageID를 활용한 라벨링
+- feature 추출
+- 서브샘플링 등 카테고리 구성
 - sframe 데이터셋 구축, 모델 러닝, 테스트 및 평가, 로그 기
