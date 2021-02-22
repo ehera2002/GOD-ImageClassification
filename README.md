@@ -23,5 +23,5 @@ aws s3 --no-sign-request sync s3://open-images-dataset/validation [target_dir/va
 
 ### 데이터 설명
 - Image IDs
-  AuthorProfileURL, Author, Title, OriginalSize, OriginalMD5, Thumbnail300KURL, Rotation 등 정보 포함
+    AuthorProfileURL, Author, Title, OriginalSize, OriginalMD5, Thumbnail300KURL, Rotation 등 정보 포함
 - 
